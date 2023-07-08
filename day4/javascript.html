@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript - My Website</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">JavaScript Training</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="javascript.html"
+                            >JavaScript</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1>JavaScript Examples</h1>
+
+            <form>
+                <div class="form-group">
+                    <label for="num1">Number 1:</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="num1"
+                        placeholder="Enter number 1"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="num2">Number 2:</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="num2"
+                        placeholder="Enter number 2"
+                    />
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="performOperations()"
+                >
+                    Perform Operations
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="toggleResult()"
+                >
+                    Toggle Result
+                </button>
+            </form>
+
+            <div id="result-container" class="alert alert-success mt-4" hidden>
+                <h3>Hasil <small class="text-muted">Operasi</small></h3>
+                <div id="result"></div>
+            </div>
+            <form>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="FirstName">First Name </label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="FirstName"
+                            placeholder="Enter First Name"
+                            required
+                        />
+                    </div>
+                    <div class="col">
+                        <label for="Surname">Surname</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="Surname"
+                            placeholder="Enter Surname"
+                        />
+                    </div>
+                    <div class="col">
+                        <label for="LastName">Last Name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="LastName"
+                            placeholder="Enter Last Name"
+                            required
+                        />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <script>
+            function performOperations() {
+                var num1 = parseInt(document.getElementById('num1').value);
+                var num2 = parseInt(document.getElementById('num2').value);
+
+                var sum = num1 + num2;
+                var difference = num1 - num2;
+                var product = num1 * num2;
+                var quotient = num1 / num2;
+
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML =
+                    '<h3>Hasil <small class="text-muted">Operasi</small></h3>';
+                resultDiv.innerHTML = 'Sum: ' + sum + '<br>';
+                resultDiv.innerHTML += 'Difference: ' + difference + '<br>';
+                resultDiv.innerHTML += 'Product: ' + product + '<br>';
+                resultDiv.innerHTML += 'Quotient: ' + quotient;
+                var resultContainer =
+                    document.getElementById('result-container');
+                resultContainer.hidden = false;
+            }
+            function toggleResult() {
+                var resultContainer =
+                    document.getElementById('result-container');
+                if (resultContainer.hidden == true) {
+                    resultContainer.hidden = false;
+                } else {
+                    resultContainer.hidden = true;
+                }
+            }
+        </script>
+    </body>
+</html>
