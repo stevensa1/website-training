@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KopiKu - Coffee Shop</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="bg-gray-100">
+        <header class="bg-gray-800 text-white text-center py-4">
+            <h1 class="text-3xl">KopiKu</h1>
+            <p class="text-sm">Good coffee, good life!</p>
+        </header>
+
+        <main class="flex flex-col md:flex-row px-16 py-8">
+            <div class="flex flex-col w-1/2">
+                <h2 class="text-2xl mb-4">Menu</h2>
+                <ul id="menuList" class="mb-8">
+                    <li>Espresso</li>
+                    <li>Cappuccino</li>
+                    <li>Latte</li>
+                    <li>Mocha</li>
+                    <li>Hot Chocolate</li>
+                </ul>
+            </div>
+            <div class="flex flex-col w-1/2">
+                <h2 class="text-2xl mb-4">Order Form</h2>
+                <form id="orderForm" class="max-w-sm">
+                    <div class="flex flex-col mb-4 gap-2">
+                        <label for="name" class="block text-gray-700"
+                            >Name:</label
+                        >
+                        <input
+                            type="text"
+                            id="name"
+                            class="w-full py-1 px-2 rounded-md border-gray-300"
+                        />
+                    </div>
+                    <div class="flex flex-col mb-4 gap-2">
+                        <label for="drink" class="block text-gray-700"
+                            >Drink:</label
+                        >
+                        <select
+                            id="drink"
+                            class="w-full py-1 px-2 rounded-md border-gray-300"
+                        >
+                            <option value="">Select a drink</option>
+                            <option value="Espresso">Espresso</option>
+                            <option value="Cappuccino">Cappuccino</option>
+                            <option value="Latte">Latte</option>
+                            <option value="Mocha">Mocha</option>
+                            <option value="Hot Chocolate">Hot Chocolate</option>
+                        </select>
+                    </div>
+                    <button
+                        type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                    >
+                        Place Order
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="bg-gray-800 text-white text-center py-3 mt-8">
+            &copy; 2023 KopiKu. All rights reserved.
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

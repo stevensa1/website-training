@@ -43,8 +43,8 @@
 
         <div class="container mt-4">
             <h1>JavaScript Examples</h1>
-
-            <form>
+            <h3>Form Perhitungan</h3>
+            <form class="my-4">
                 <div class="form-group">
                     <label for="num1">Number 1:</label>
                     <input
@@ -83,7 +83,8 @@
                 <h3>Hasil <small class="text-muted">Operasi</small></h3>
                 <div id="result"></div>
             </div>
-            <form>
+            <h3>Form Nama</h3>
+            <form class="my-4">
                 <div class="form-group row">
                     <div class="col">
                         <label for="FirstName">First Name </label>
@@ -120,13 +121,13 @@
                     <input type="email" class="form-control" id="email" />
                     <div>We'll never share your email with anyone else.</div>
                 </div>
-                <div class="form-group">
-                    <label for="password" class="form-label"
-                        >Masukkan Password</label
-                    >
-                    <input type="password" class="form-control" id="password" />
-                    <div>We'll encrypt your password to keep it safe.</div>
-                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="tampilkanHasil()"
+                >
+                    Tampilkan Hasil
+                </button>
             </form>
             <div id="identify-result" hidden>
                 <h1>Your Identitfy</h1>
@@ -198,17 +199,20 @@
                 let surName = document.getElementById('Surname').value;
                 let lastName = document.getElementById('LastName').value;
 
-                if (surName == '') {
-                    let fullName = firstName + ' ' + lastName;
-                } else {
-                    let fullName = firstName + ' ' + ' ' + lastName;
-                }
                 let fullName = firstName;
                 if (surName !== '') {
                     fullName += ' ' + surName;
                 }
 
                 fullName += ' ' + lastName;
+
+                var resultFullName = document.getElementById('ResultFullName');
+                var resultEmail = document.getElementById('ResultEmail');
+                resultFullName.innerHTML = fullName;
+                resultEmail.innerHTML = document.getElementById('email').value;
+
+                var identifyResult = document.getElementById('identify-result');
+                identifyResult.hidden = false;
             }
         </script>
     </body>
